@@ -1,0 +1,10 @@
+$nomention
+
+$var[ID;$sendMessage[Deteniendo musica...;yes]]
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/leave;{
+    "token": "$getVar[TOKEN]",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"}]
+$description[Musica detenida exitosamente]
+$removeAllComponents
+$deleteMessage[$channelID;$var[ID]]
