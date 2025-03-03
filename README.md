@@ -1,5 +1,5 @@
 
-# Music System un BDFD
+# Music System en BDFD
 
 Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger For Discord.
 
@@ -20,7 +20,7 @@ Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger Fo
 - !stop
 
 
-## Authors
+## Autor
 
 - [Edgajuman](https://github.com/edgajuman)
 
