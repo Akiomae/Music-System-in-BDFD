@@ -1,0 +1,33 @@
+$nomention
+$argsCheck[>1;Escribe el nombre de una musica.]
+$if[$channelType[$channelID]==voice]
+$var[ID;$sendMessage[Buscando **$message**.;yes]]
+$suppressErrors[Error innesperado, intentalo mas tarde.]
+
+$httpGet[https://edgabot.lucnodes.es/api/music/?search=$url[encode;$message]]
+$description[Resultados para **$message**]
+
+$newSelectMenu[Music;1;1;Selecciona un resultado]
+$addSelectMenuOption[Music;$httpResult[0;title];$authorID-$httpResult[0;videoId];Autor: $httpResult[0;author] | Duración: $httpResult[0;timestamp];;]
+$if[$httpResult[1]==]$else
+$addSelectMenuOption[Music;$httpResult[1;title];$authorID-$httpResult[1;videoId];Autor: $httpResult[1;author] | Duración: $httpResult[1;timestamp];;]
+$endif
+$if[$httpResult[2]==]$else
+$addSelectMenuOption[Music;$httpResult[2;title];$authorID-$httpResult[2;videoId];Autor: $httpResult[2;author] | Duración: $httpResult[2;timestamp];;]
+$endif
+$if[$httpResult[3]==]$else
+$addSelectMenuOption[Music;$httpResult[3;title];$authorID-$httpResult[3;videoId];Autor: $httpResult[3;author] | Duración: $httpResult[3;timestamp];;]
+$endif
+$if[$httpResult[4]==]$else
+$addSelectMenuOption[Music;$httpResult[4;title];$authorID-$httpResult[4;videoId];Autor: $httpResult[4;author] | Duración: $httpResult[4;timestamp];;]
+$endif
+$if[$httpResult[5]==]$else
+$addSelectMenuOption[Music;$httpResult[5;title];$authorID-$httpResult[5;videoId];Autor: $httpResult[5;author] | Duración: $httpResult[5;timestamp];;]
+$endif
+
+$deleteMessage[$channelID;$var[ID]]
+$elseif[$channelType[$channelID]==text]
+Porfavor ejecuta este comando solo en un canal de voz.
+$endif
+
+$suppressErrors[Error innesperado, intentalo mas tarde.]
