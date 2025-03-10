@@ -1,10 +1,11 @@
 $nomention
 $argsCheck[>1;Escribe el nombre de una musica.]
 $if[$channelType[$channelID]==voice]
-$var[ID;$sendMessage[Buscando **$message**.;yes]]
-$suppressErrors[Error innesperado, intentalo mas tarde.]
+$var[ID;$sendMessage[Buscando **$message** en YouTube.;yes]]
+$suppressErrors[Error innesperado, intentalo mas tarde.
+-# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
 
-$httpGet[https://edgabot.lucnodes.es/api/music/?search=$url[encode;$message]]
+$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4400/api/music/?search=$url[encode;$message]]
 $description[Resultados para **$message**]
 
 $newSelectMenu[Music;1;1;Selecciona un resultado]
@@ -30,4 +31,6 @@ $elseif[$channelType[$channelID]==text]
 Porfavor ejecuta este comando solo en un canal de voz.
 $endif
 
+$suppressErrors[Error innesperado, intentalo mas tarde.
+-# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
 $suppressErrors[Error innesperado, intentalo mas tarde.]
