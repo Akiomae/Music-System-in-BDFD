@@ -12,4 +12,9 @@ $if[$httpResult[1;name]==]$else* $httpResult[1;name]$endif
 $if[$httpResult[2;name]==]$else* $httpResult[1;name]$endif
 $if[$httpResult[3;name]==]$else* $httpResult[1;name]$endif
 $if[$httpResult[4;name]==]$else* $httpResult[1;name]$endif
-$if[$httpResult[5;name]==]$else* $httpResult[1;name]$endif]
+$if[$httpResult[5;name]==]$else* $httpResult[1;name]$endif
+$if[$httpResult[6;name]==]$else* $httpResult[1;name]$endif
+$if[$httpResult[7;name]==]$else* $httpResult[1;name]$endif
+$if[$httpResult[8;name]==]$else* $httpResult[1;name]$endif
+$if[$httpResult[9;name]==]$else* $httpResult[1;name]$endif
+$if[$httpResult[10;name]==]$else* $httpResult[1;name]$endif]
