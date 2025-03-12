@@ -44,7 +44,7 @@ https://discord.gg/RMSYrQCs2r
 - Se soluciono la carga de acciones, ahora responden mas rapido, excepto el !play, ya que realiza la busqueda de la musica
 - Se agrego un sistema de premium que aun no lo activamos (Luego se informara de esto)
 
-## Funcionalidad
+## Posibles bugs
 El sistema es totalmente funcional, aunque tiene algunos bugs que luego se iran corrigiendo.
 Algunos bugs pueden ser:
 - Error al skipear una musica
