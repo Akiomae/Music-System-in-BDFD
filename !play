@@ -28,7 +28,9 @@ $title[Musica añadida a la cola]
 $description[* **Nombre:** $var[name]
   - **Autor:** $var[author]
   - **Duración:** $var[long]
-  - **URL:** $var[youtube]]
+  - **URL:** $var[youtube]
+  
+-# Para añadir mas musicas a la cola, usa **!addMusic**]
 $thumbnail[$var[image]]
 $footer[Akiomae APIS]
 $addTimestamp
