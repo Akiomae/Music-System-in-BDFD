@@ -8,7 +8,7 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/pause;{
     "guild_id": "$guildID"
 }]
 $description[Musica pausada.
--# Para añadir mas musicas a la cola, usa **E!addMusic**]
+-# Para añadir mas musicas a la cola, usa **!addMusic**]
 $removeAllComponents
 $addButton[yes;stop;;secondary;no;⏹️]
 $addButton[no;resume;;secondary;no;▶️]
