@@ -1,0 +1,23 @@
+  "token": "$getVar[TOKEN]",
+  "bot_id": "$botID",
+  "user_id": "$authorID",
+  "guild_id": "$guildID",
+  "url": "$var[url]",
+  "name": "$var[name]"
+}]
+
+$author[$var[author]]
+$authorURL[$var[authorURL]]
+$title[Musica añadida a la cola]
+$description[* **Nombre:** $var[name]
+  - **Autor:** $var[author]
+  - **Duración:** $var[long]
+  - **URL:** $var[youtube]
+-# Para añadir mas musicas a la cola, usa **!addMusic**]
+$thumbnail[$var[image]]
+$footer[Akiomae APIS]
+$addTimestamp
+$deleteMessage[$channelID;$var[ID]]
+
+$suppressErrors[Error innesperado, intentalo mas tarde.
+-# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
