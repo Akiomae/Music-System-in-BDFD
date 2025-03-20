@@ -16,13 +16,8 @@ Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger Fo
 
 ## Comandos
 - !play
-- !addMusic
-- $onInteraction[play]
-- $onInteraction[stop]
-- $onInteraction[pause]
-- $onInteraction[resume]
-- $onInteraction[skip]
-- $onInteraction[list]
+- !stop
+- $onInteraction
 
 
 ## Autor
