@@ -22,20 +22,43 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/music;{
   "name": "$var[name]"
 }]
 
+$if[$getServerVar[play]==false]
+$nomention
 $author[$var[author]]
 $authorURL[$var[authorURL]]
 $title[Musica añadida a la cola]
 $description[* **Nombre:** $var[name]
   - **Autor:** $var[author]
   - **Duración:** $var[long]
-  - **URL:** $var[youtube]
-  
--# Para añadir mas musicas a la cola, usa **!addMusic**]
+  - **URL:** $var[youtube]]
 $thumbnail[$var[image]]
 $footer[Akiomae APIS]
 $addTimestamp
-$addButton[yes;play;Reproducir;secondary;no;▶️]
-$deleteMessage[$channelID;$var[ID]]
+$addButton[yes;stop;;secondary;no;⏹️]
+$addButton[no;pause;;secondary;no;⏸️]
+$addButton[no;skip;;secondary;no;⏭️]
+$addButton[no;list;Lista;secondary;no;🗒️]
+$setServerVar[play;true]
 
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/play;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"
+}]
+$elseif[$getServerVar[play]==true]
+$author[$var[author]]
+$authorURL[$var[authorURL]]
+$title[Musica añadida a la cola]
+$description[* **Nombre:** $var[name]
+  - **Autor:** $var[author]
+  - **Duración:** $var[long]
+  - **URL:** $var[youtube]]
+$thumbnail[$var[image]]
+$footer[Akiomae APIS]
+$addTimestamp
+$endif
+
+$deleteMessage[$channelID;$var[ID]]
 $suppressErrors[Error innesperado, intentalo mas tarde.
 -# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
