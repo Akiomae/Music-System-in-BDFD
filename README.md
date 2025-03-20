@@ -39,7 +39,6 @@ https://discord.gg/RMSYrQCs2r
 - Se soluciono el error de no reproducir la musica completa
 - Se soluciono el problema que hacia desconectarse al bot de la nada
 - Se soluciono la carga de acciones, ahora responden mas rapido, excepto el !play, ya que realiza la busqueda de la musica
-- Se agrego un sistema de premium que aun no lo activamos (Luego se informara de esto)
 
 ## Posibles bugs
 El sistema es totalmente funcional, aunque tiene algunos bugs que luego se iran corrigiendo.
