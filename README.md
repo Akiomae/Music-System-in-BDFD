@@ -30,6 +30,7 @@ Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger Fo
 https://discord.gg/RMSYrQCs2r
 
 ## Nuevas cosas y actualizaciones
+- SISTEMA DE PREMIUM
 - Función de Pause y Resume
 - Función de Skip
 - Botones de acciones
@@ -43,6 +44,5 @@ https://discord.gg/RMSYrQCs2r
 ## Posibles bugs
 El sistema es totalmente funcional, aunque tiene algunos bugs que luego se iran corrigiendo.
 Algunos bugs pueden ser:
-- Error al skipear una musica
 - No reproducir la lista automaticamente
 - No agregar musicas a la lista (rara vez)
