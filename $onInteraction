@@ -1,0 +1,133 @@
+$if[$customID==pause]
+$nomention
+$var[ID;$sendMessage[Pausando musica...;yes]]
+$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/queue?bot_id=$botID&guild_id=$guildID]
+$var[music;$httpResult[currentTrack;name]]
+
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/pause;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"
+}]
+$title[Musica pausada.]
+$description[**Musica actual:** $var[music]]
+$footer[Akiomae APIS]
+$addTimestamp
+$removeAllComponents
+$addButton[yes;stop;;secondary;no;⏹️]
+$addButton[no;resume;;secondary;no;▶️]
+$addButton[no;skip;;secondary;no;⏭️]
+$addButton[no;list;;secondary;no;🗒️]
+$addButton[no;info;;secondary;no;ℹ️]
+$removeAllComponents
+$deleteMessage[$channelID;$var[ID]]
+$endif
+
+$if[$customID==resume]
+$nomention
+$var[ID;$sendMessage[Reanundando musica...;yes]]
+$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/queue?bot_id=$botID&guild_id=$guildID]
+$var[music;$httpResult[currentTrack;name]]
+
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/resume;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"
+}]
+$title[Musica reanundada.]
+$description[**Musica actual:** $var[music]]
+$footer[Akiomae APIS]
+$addTimestamp
+$removeAllComponents
+$addButton[yes;stop;;secondary;no;⏹️]
+$addButton[no;pause;;secondary;no;⏸️]
+$addButton[no;skip;;secondary;no;⏭️]
+$addButton[no;list;;secondary;no;🗒️]
+$addButton[no;info;;secondary;no;ℹ️]
+$removeAllComponents
+$deleteMessage[$channelID;$var[ID]]
+$endif
+
+$if[$customID==stop]
+$nomention
+
+$var[ID;$sendMessage[Deteniendo musica...;yes]]
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/stop;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"
+}]
+$description[Musica detenida y bot desconectado exitosamente
+-# La lista de reproducciónah sido reseteada.]
+$footer[Akiomae APIS]
+$addTimestamp
+$removeAllComponents
+$setServerVar[play;false]
+$deleteMessage[$channelID;$var[ID]]
+$endif
+
+$if[$customID==skip]
+$nomention
+$var[ID;$sendMessage[Skipeando musica...;yes]]
+
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/sig;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"
+}]
+
+$title[Reproduciendo siguiente musica.]
+$footer[Akiomae APIS]
+$addTimestamp
+$removeAllComponents
+$addButton[yes;stop;;secondary;no;⏹️]
+$addButton[no;pause;;secondary;no;⏸️]
+$addButton[no;skip;;secondary;no;⏭️]
+$addButton[no;list;;secondary;no;🗒️]
+$addButton[no;info;;secondary;no;ℹ️]
+$removeAllComponents
+$deleteMessage[$channelID;$var[ID]]
+$endif
+
+$if[$customID==list]
+$ephemeral
+$nomention
+$removeAllComponents
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/list;{
+    "bot_id": "$botID",
+    "guild_id": "$guildID"
+}]
+
+$title[Lista de reproducción]
+$footer[Akiomae APIS]
+$addTimestamp
+$description[* $httpResult[songs;0;name]
+$if[$httpResult[songs;1;name]==]$else* $httpResult[songs;1;name]$endif
+$if[$httpResult[songs;2;name]==]$else* $httpResult[songs;2;name]$endif
+$if[$httpResult[songs;3;name]==]$else* $httpResult[songs;3;name]$endif
+$if[$httpResult[songs;4;name]==]$else* $httpResult[songs;4;name]$endif
+$if[$httpResult[songs;5;name]==]$else* $httpResult[songs;5;name]$endif
+$if[$httpResult[songs;6;name]==]$else* $httpResult[songs;6;name]$endif
+$if[$httpResult[songs;7;name]==]$else* $httpResult[songs;7;name]$endif
+$if[$httpResult[songs;8;name]==]$else* $httpResult[songs;8;name]$endif
+$if[$httpResult[songs;9;name]==]$else* $httpResult[songs;9;name]$endif
+$if[$httpResult[songs;10;name]==]$else* $httpResult[songs;10;name]$endif]
+$endif
+
+$if[$customID==info]
+$ephemeral
+$nomention
+$removeAllComponents
+$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/queue?bot_id=$botID&guild_id=$guildID]
+
+$title[Información de música actual.]
+$footer[Akiomae APIS]
+$addTimestamp
+$description[* **Nombre:** $httpResult[currentTrack;name]
+* **Extención:** $httpResult[currentTrack;extension]
+* **Fecha:** $httpResult[currentTrack;addedAt]]
+$endif
