@@ -6,12 +6,13 @@ Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger Fo
 
 ## Configuración
 
-#### Solo necesitas crear una variable
+#### Solo necesitas crear 2 variable
 
 
 | name | value     |
 | :-------- | :------- |
 | `TOKEN` | `El token de su bot de discord` | 
+| `play` | `false` |
 
 ## Comandos
 - !play
