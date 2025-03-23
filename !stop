@@ -1,5 +1,5 @@
 $nomention
-$c[COMANDO ALTERNATIVO]
+
 $var[ID;$sendMessage[Deteniendo musica...;yes]]
 $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/stop;{
     "token": "$getVar[TOKEN]",
@@ -8,7 +8,7 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/stop;{
     "guild_id": "$guildID"
 }]
 $description[Musica detenida y bot desconectado exitosamente
--# La lista de reproducciónah sido reseteada.]
+-# La lista de reproducción ha sido reseteada.]
 $removeAllComponents
 $setServerVar[play;false]
 $deleteMessage[$channelID;$var[ID]]
