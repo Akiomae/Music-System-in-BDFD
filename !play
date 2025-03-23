@@ -23,6 +23,22 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/music;{
 }]
 
 $if[$getServerVar[play]==false]
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/play;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"
+}]
+$var[conect;$httpResult[error]]
+$if[$var[conect]==El usuario no está en un canal de voz]
+$description[❌ **$httpResult[error]**]
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/stop;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID"
+}]
+$else
 $nomention
 $author[$var[author]]
 $authorURL[$var[authorURL]]
@@ -38,15 +54,12 @@ $addButton[yes;stop;;secondary;no;⏹️]
 $addButton[no;pause;;secondary;no;⏸️]
 $addButton[no;skip;;secondary;no;⏭️]
 $addButton[no;list;Lista;secondary;no;🗒️]
+$addButton[no;info;;secondary;no;ℹ️]
 $setServerVar[play;true]
-
-$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/play;{
-    "token": "$getVar[TOKEN]",
-    "bot_id": "$botID",
-    "user_id": "$authorID",
-    "guild_id": "$guildID"
-}]
+$reply
+$endif
 $elseif[$getServerVar[play]==true]
+$nomention
 $author[$var[author]]
 $authorURL[$var[authorURL]]
 $title[Musica añadida a la cola]
@@ -57,6 +70,7 @@ $description[* **Nombre:** $var[name]
 $thumbnail[$var[image]]
 $footer[Akiomae APIS]
 $addTimestamp
+$reply
 $endif
 
 $deleteMessage[$channelID;$var[ID]]
