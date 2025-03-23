@@ -1,5 +1,5 @@
 
-# Music System en BDFD
+# Music System en BDFD v3.1
 
 Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger For Discord.
 
@@ -39,9 +39,12 @@ https://discord.gg/RMSYrQCs2r
 - Se soluciono el error de no reproducir la musica completa
 - Se soluciono el problema que hacia desconectarse al bot de la nada
 - Se soluciono la carga de acciones, ahora responden mas rapido, excepto el !play, ya que realiza la busqueda de la musica
+- Se agregaron verificaciones si el usuario esta en un canal o no
+- Se añadieron los nombres de las musicas en reproducción
 
 ## Posibles bugs
 El sistema es totalmente funcional, aunque tiene algunos bugs que luego se iran corrigiendo.
 Algunos bugs pueden ser:
-- No reproducir la lista automaticamente
 - No agregar musicas a la lista (rara vez)
+- La primera musica de la lista se repite
+- Repetir musica despues de los anuncios
