@@ -1,10 +1,16 @@
 $nomention
-$argsCheck[>1;Escribe el nombre de una musica.]
-$var[ID;$sendMessage[Buscando **$message** en YouTube.;yes]]
+$if[$isSlash==true]
+$var[MS;$message[canción]]
+$else
+$var[MS;$message]
+$endif
+
+$onlyIf[$var[MS]!=;Escribe el nombre de una musica.]
+$var[ID;$sendMessage[Buscando **$var[MS]** en YouTube.;yes]]
 $suppressErrors[Error innesperado, intentalo mas tarde.
 -# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
 
-$httpGet[https://api.agatz.xyz/api/ytplay?message=$url[encode;$message]]
+$httpGet[https://api.agatz.xyz/api/ytplay?message=$url[encode;$var[MS]]]
 $var[name;$httpResult[data;audio;title]]
 $var[url;$httpResult[data;audio;url]]
 $var[author;$httpResult[data;info;author;name]]
@@ -21,7 +27,10 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/music;{
   "url": "$var[url]",
   "name": "$var[name]"
 }]
-
+$if[$httpResult[error]==Límite de canciones alcanzado]
+$description[❌ **$httpResult[error]**
+-# $httpResult[message]]
+$else
 $if[$getServerVar[play]==false]
 $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/play;{
     "token": "$getVar[TOKEN]",
@@ -51,10 +60,11 @@ $thumbnail[$var[image]]
 $footer[Akiomae APIS]
 $addTimestamp
 $addButton[yes;stop;;secondary;no;⏹️]
+$addButton[no;ante;;secondary;no;⏮️]
 $addButton[no;pause;;secondary;no;⏸️]
 $addButton[no;skip;;secondary;no;⏭️]
-$addButton[no;list;Lista;secondary;no;🗒️]
-$addButton[no;info;;secondary;no;ℹ️]
+$addButton[no;list;;secondary;no;🗒️]
+$addButton[yes;info;;secondary;no;ℹ️]
 $setServerVar[play;true]
 $reply
 $endif
@@ -71,6 +81,7 @@ $thumbnail[$var[image]]
 $footer[Akiomae APIS]
 $addTimestamp
 $reply
+$endif
 $endif
 
 $deleteMessage[$channelID;$var[ID]]
