@@ -18,7 +18,7 @@ Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger Fo
 - !play
 - !stop
 - !vol
-- $onInteraction
+- $onInteraction (2)
 
 
 ## Autor
