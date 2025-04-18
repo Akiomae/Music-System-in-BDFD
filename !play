@@ -31,7 +31,7 @@ $if[$httpResult[error]==Límite de canciones alcanzado]
 $description[❌ **$httpResult[error]**
 -# $httpResult[message]]
 $else
-$if[$getServerVar[play]==false]
+$if[$httpResult[position]==1]
 $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/play;{
     "token": "$getVar[TOKEN]",
     "bot_id": "$botID",
@@ -57,6 +57,7 @@ $description[* **Nombre:** $var[name]
   - **Duración:** $var[long]
   - **URL:** $var[youtube]]
 $thumbnail[$var[image]]
+$image[https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
 $footer[Akiomae APIS]
 $addTimestamp
 $addButton[yes;stop;;secondary;no;⏹️]
@@ -65,10 +66,10 @@ $addButton[no;pause;;secondary;no;⏸️]
 $addButton[no;skip;;secondary;no;⏭️]
 $addButton[no;list;;secondary;no;🗒️]
 $addButton[yes;info;;secondary;no;ℹ️]
-$setServerVar[play;true]
+$addButton[no;vol;;secondary;no;🔊]
 $reply
 $endif
-$elseif[$getServerVar[play]==true]
+$elseif[$httpResult[position]>=2]
 $nomention
 $author[$var[author]]
 $authorURL[$var[authorURL]]
@@ -78,6 +79,7 @@ $description[* **Nombre:** $var[name]
   - **Duración:** $var[long]
   - **URL:** $var[youtube]]
 $thumbnail[$var[image]]
+$image[https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
 $footer[Akiomae APIS]
 $addTimestamp
 $reply
