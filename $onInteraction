@@ -22,6 +22,7 @@ $addButton[no;resume;;secondary;no;▶️]
 $addButton[no;skip;;secondary;no;⏭️]
 $addButton[no;list;;secondary;no;🗒️]
 $addButton[yes;info;;secondary;no;ℹ️]
+$addButton[no;vol;;secondary;no;🔊]
 $removeAllComponents
 $deleteMessage[$channelID;$var[ID]]
 $endif
@@ -49,6 +50,7 @@ $addButton[no;pause;;secondary;no;⏸️]
 $addButton[no;skip;;secondary;no;⏭️]
 $addButton[no;list;;secondary;no;🗒️]
 $addButton[yes;info;;secondary;no;ℹ️]
+$addButton[no;vol;;secondary;no;🔊]
 $removeAllComponents
 $deleteMessage[$channelID;$var[ID]]
 $endif
@@ -68,7 +70,6 @@ $description[Musica detenida y bot desconectado exitosamente
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$setServerVar[play;false]
 $deleteMessage[$channelID;$var[ID]]
 $endif
 
@@ -80,7 +81,7 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/sig;{
     "user_id": "$authorID",
     "guild_id": "$guildID"
 }]
-$if[$httpResult[error]==Función no disponible]
+$if[$httpResult[error]==Límite de saltos alcanzado]
 $description[**❌ $httpResult[message]**]
 $else
 $title[Reproduciendo siguiente musica.]
@@ -94,6 +95,7 @@ $addButton[no;pause;;secondary;no;⏸️]
 $addButton[no;skip;;secondary;no;⏭️]
 $addButton[no;list;;secondary;no;🗒️]
 $addButton[yes;info;;secondary;no;ℹ️]
+$addButton[no;vol;;secondary;no;🔊]
 $removeAllComponents
 $endif
 $endif
@@ -120,6 +122,7 @@ $addButton[no;pause;;secondary;no;⏸️]
 $addButton[no;skip;;secondary;no;⏭️]
 $addButton[no;list;;secondary;no;🗒️]
 $addButton[yes;info;;secondary;no;ℹ️]
+$addButton[no;vol;;secondary;no;🔊]
 $removeAllComponents
 $endif
 $endif
@@ -136,7 +139,7 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/list;{
 $title[Lista de reproducción]
 $footer[Akiomae APIS]
 $addTimestamp
-$description[$if[$httpResult[songs;1;name]==]Aun no hay musicas en la lista.$else* $httpResult[songs;1;name]$endif
+$description[$if[$httpResult[songs;0;name]==]Aun no hay musicas en la lista.$else* $httpResult[songs;0;name]$endif
 $if[$httpResult[songs;1;name]==]$else* $httpResult[songs;1;name]$endif
 $if[$httpResult[songs;2;name]==]$else* $httpResult[songs;2;name]$endif
 $if[$httpResult[songs;3;name]==]$else* $httpResult[songs;3;name]$endif
@@ -169,4 +172,31 @@ $addTimestamp
 $description[* **Nombre:** $httpResult[currentTrack;name]
 * **Extención:** $httpResult[currentTrack;extension]
 * **Fecha:** $httpResult[currentTrack;addedAt]]
+$endif
+
+$if[$customID==vol]
+$ephemeral
+$nomention
+$removeAllComponents
+
+$title[Ajusta el volumen de la musica.]
+$footer[Akiomae APIS]
+$addTimestamp
+$addButton[yes;vol-10;10%;secondary;no;]
+$addButton[no;vol-30;30%;secondary;no;]
+$addButton[no;vol-50;50%;secondary;no;]
+$addButton[no;vol-70;70%;secondary;no;]
+$addButton[no;vol-100;100%;secondary;no;]
+$addButton[yes;vol-1;1%;danger;no;]
+$endif
+
+$textSplit[$customID;-]
+$if[$splitText[1]==vol]
+$ephemeral
+$nomention
+$removeAllComponents
+$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/volumen?bot_id=$botID&guild_id=$guildID&volumen=$splitText[2]]
+
+$title[:loud_sound: Volumen ajustado :headphones:]
+$description[Se ha ajustado el volumen de la música a `$splitText[2]%`]
 $endif
