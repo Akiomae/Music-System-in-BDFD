@@ -1,5 +1,5 @@
 
-# Music System en BDFD v4.0
+# Music System in BDFD v4.0
 
 Un sistema para poder reproducir musica con tu bot de discord en Bot Desinger For Discord.
 
