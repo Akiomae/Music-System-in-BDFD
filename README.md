@@ -55,4 +55,4 @@ Algunos bugs pueden ser:
 > Se ah desarrollado un panel para su bot que use este sistema de musica.
 `Link:` https://edgabot.lucnodes.es/
 ### Video de demostración
-<div style="padding:51.56% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1077124656?h=e5af1e0cd6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BotPanel demostración"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+https://vimeo.com/1077124656
