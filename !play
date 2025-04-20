@@ -67,7 +67,6 @@ $addButton[no;skip;;secondary;no;⏭️]
 $addButton[no;list;;secondary;no;🗒️]
 $addButton[yes;info;;secondary;no;ℹ️]
 $addButton[no;volu;;secondary;no;🔊]
-$addButton[no;down;;primary;no;📥]
 $reply
 $endif
 $elseif[$httpResult[position]>=2]
