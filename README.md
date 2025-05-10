@@ -6,10 +6,10 @@ Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot De
 
 ## Configuración
 
-#### Solo necesitas crear 1 variable
+#### Solo necesitas crear 2 variables obligatoriamente
 
 
-| name | value     |
+| nombre | valor     |
 | :-------- | :------- |
 | `TOKEN` | `El token de su bot de discord` | 
 | `musicMS` | `Sin valor` | 
