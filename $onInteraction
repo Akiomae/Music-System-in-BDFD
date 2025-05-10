@@ -16,7 +16,7 @@ $description[**Musica actual:** $var[music]]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[yes;stop;Parar;danger;no;:stop_button:]
 $addButton[no;ante;Anterior;secondary;no;:rewind:]
 $addButton[no;resume;Reanundar;secondary;no;▶️]
 $addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
@@ -46,7 +46,7 @@ $description[**Musica actual:** $var[music]]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[yes;stop;Parar;danger;no;:stop_button:]
 $addButton[no;ante;Anterior;secondary;no;:rewind:]
 $addButton[no;pause;Pausar;secondary;no;:pause_button:]
 $addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
@@ -94,7 +94,7 @@ $description[**$httpResult[currentTrack;name]**]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[yes;stop;Parar;danger;no;:stop_button:]
 $addButton[no;ante;Anterior;secondary;no;:rewind:]
 $addButton[no;pause;Pausar;secondary;no;:pause_button:]
 $addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
@@ -123,7 +123,7 @@ $description[**$httpResult[currentTrack;name]**]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[yes;stop;Parar;danger;no;:stop_button:]
 $addButton[no;ante;Anterior;secondary;no;:rewind:]
 $addButton[no;pause;Pausar;secondary;no;:pause_button:]
 $addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
