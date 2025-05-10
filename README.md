@@ -55,6 +55,7 @@ https://discord.gg/RMSYrQCs2r
 - Se agrego sistema de IA (Este sistema dara recomendaciones y lo añadira automaticamente a la lista)
 - Se cambio de libreria de busqueda para una mejor legibilidad y evitar la mayoria de errores posibles
 - Coloreo de botones y nombres de acción añadido
+- Se añadio sistema de descarga para descargar la musica actualmente sonando de la lista (Solo por 1 minutos, luego de eso no se podra descargar)
 
 ## Posibles bugs
 El sistema es totalmente funcional, aunque tiene algunos bugs que luego se iran corrigiendo.
