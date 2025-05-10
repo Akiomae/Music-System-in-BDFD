@@ -55,7 +55,7 @@ $var[musicMS;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtub
   - **Duración:** $var[long]
   - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
 
-$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS]]
+$addButton[yes;stop;Parar;danger;no;⏹️;$var[musicMS]]
 $addButton[no;ante;Anterior;secondary;no;⏪;$var[musicMS]]
 $addButton[no;pause;Pausar;secondary;no;⏸️;$var[musicMS]]
 $addButton[no;skip;Siguiente;secondary;no;⏩;$var[musicMS]]
@@ -77,7 +77,7 @@ $var[musicMS2;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtu
   - **Duración:** $var[long]
   - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
 
-$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS2]]
+$addButton[yes;stop;Parar;danger;no;⏹️;$var[musicMS2]]
 $addButton[no;ante;Anterior;secondary;no;⏪;$var[musicMS2]]
 $addButton[no;pause;Pausar;secondary;no;⏸️;$var[musicMS2]]
 $addButton[no;skip;Siguiente;secondary;no;⏩;$var[musicMS2]]
