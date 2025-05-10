@@ -1,0 +1,36 @@
+$nomention
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/list;{
+    "bot_id": "$botID",
+    "guild_id": "$guildID"
+}]
+
+$if[$httpResult[songs;0;name]==]
+$description[Aun no hay una lista de reproducción]
+$else
+$var[JSON;{"$httpResult[songs;0;name]$if[$httpResult[songs;1;name]==]$else","$httpResult[songs;1;name]$endif$if[$httpResult[songs;2;name]==]$else","$httpResult[songs;2;name]$endif$if[$httpResult[songs;3;name]==]$else","$httpResult[songs;3;name]$endif$if[$httpResult[songs;4;name]==]$else","$httpResult[songs;4;name]$endif$if[$httpResult[songs;5;name]==]$else","$httpResult[songs;5;name]$endif$if[$httpResult[songs;6;name]==]$else","$httpResult[songs;6;name]$endif$if[$httpResult[songs;7;name]==]$else","$httpResult[songs;7;name]$endif$if[$httpResult[songs;8;name]==]$else","$httpResult[songs;8;name]$endif$if[$httpResult[songs;9;name]==]$else","$httpResult[songs;9;name]$endif$if[$httpResult[songs;10;name]==]$else","$httpResult[songs;10;name]$endif"}]
+$var[IDE;$sendMessage[La IA esta buscando una recomendación...;yes]]
+$httpGet[https://api.agatz.xyz/api/gptlogic?logic=$url[encode;Esta es una lista de reproducción en formato JSON con nombres de canciones: $var[JSON]. Basándote en las canciones, recomienda SOLO EL NOMBRE DE UNA CANCIÓN SIGUIENTE, RECUERDA SOLO NOMBRE, NADA DE TEXTO QUE NO SEA EL NOMBRE.]&p=$url[encode;¿Qué musica deberia seguir esta lista?]]
+$var[IA;$httpResult[data;result]]
+$deleteMessage[$channelID;$var[IDE]]
+
+$var[ID;$sendMessage[La IA recomendo `$var[IA]`, Buscando musica...;yes]]
+$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4403/get_song?name=$url[encode;$var[IA]]]
+$var[name;$httpResult[title]]
+$var[url;$httpResult[url]]
+$deleteMessage[$channelID;$var[ID]]
+
+
+$var[II;$sendMessage[Se encontro `$var[name]`, Añadiendo a la lista...;yes]]
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/music;{
+  "token": "$getVar[TOKEN]",
+  "bot_id": "$botID",
+  "user_id": "$authorID",
+  "guild_id": "$guildID",
+  "url": "$var[url]",
+  "name": "$var[name]"
+}]
+$deleteMessage[$channelID;$var[II]]
+
+$description[Se añadio `$var[name]` a la lista de reproducción actual]
+$footer[Powered by Akiomae APIS]
+$endif
