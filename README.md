@@ -1,5 +1,5 @@
 
-# Music System in BDFD v4.1 (PARCHE)
+# Music System in BDFD v5.0
 
 Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot Desinger For Discord.
 
@@ -12,11 +12,13 @@ Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot De
 | name | value     |
 | :-------- | :------- |
 | `TOKEN` | `El token de su bot de discord` | 
+| `musicMS` | `Sin valor` | 
 
 ## Comandos
 - !play
 - !stop
 - !vol
+- !musicIA
 - $onInteraction (2)
 
 
@@ -29,7 +31,7 @@ Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot De
 
 https://discord.gg/RMSYrQCs2r
 
-## Nuevas cosas y actualizaciones
+## Cosas añadidas en la versión anterior
 - Se mejoro el sistema de premium para dar mas ventajas a los bots PREMIUM
 - AHORA TU BOT PODRA REPRODUCIR MUSICAS DE YOUTUBE POR NOMBRE O URL
 - Función de Pause y Resume
@@ -45,6 +47,14 @@ https://discord.gg/RMSYrQCs2r
 - Se agrego una Music Card para una vista atractiva de la musica en el !play
 - Se implemento mas verificaciones necesarias (gracias a esto ya no se necesitara la variable "play")
 - Ahora cuando desconecten tu bot del canal de voz sin el !stop se eliminara automaticamente la lista (esto para mejorar la experiencia y no tener una reproducción bugeada)
+
+## Cosas añadidas en la nueva versión v5.0
+- Ahora los botones se posicionaran siempre en la musica mas reciente añadida
+- Se redujo lo mayor posible los errores que impedian añadir musicas
+- Se soluciono errores de bots NO PREMIUM
+- Se agrego sistema de IA (Este sistema dara recomendaciones y lo añadira automaticamente a la lista)
+- Se cambio de libreria de busqueda para una mejor legibilidad y evitar la mayoria de errores posibles
+- Coloreo de botones y nombres de acción añadido
 
 ## Posibles bugs
 El sistema es totalmente funcional, aunque tiene algunos bugs que luego se iran corrigiendo.
