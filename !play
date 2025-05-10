@@ -6,9 +6,7 @@ $var[MS;$message]
 $endif
 
 $onlyIf[$var[MS]!=;Escribe el nombre de una musica.]
-$var[ID;$sendMessage[Buscando **$var[MS]**...
--# Tiempo estimado 10 segundos.
--# Depende del tamaño del video.;yes]]
+$var[ID;$sendMessage[Buscando **$var[MS]**...;yes]]
 $suppressErrors[Error innesperado, intentalo mas tarde.
 -# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
 
@@ -49,38 +47,46 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/stop;{
     "guild_id": "$guildID"
 }]
 $else
+$var[IMG;https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
+
 $nomention
-$author[$var[author]]
-$title[Musica añadida a la cola]
-$description[* **Nombre:** $var[name]
+$var[musicMS;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtube];* **Nombre:** $var[name]
   - **Autor:** $var[author]
   - **Duración:** $var[long]
-  - **URL:** $var[youtube]]
-$thumbnail[$var[image]]
-$image[https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
-$footer[Akiomae APIS]
-$addTimestamp
-$addButton[yes;stop;;secondary;no;⏹️]
-$addButton[no;ante;;secondary;no;⏮️]
-$addButton[no;pause;;secondary;no;⏸️]
-$addButton[no;skip;;secondary;no;⏭️]
-$addButton[no;list;;secondary;no;🗒️]
-$addButton[yes;info;;secondary;no;ℹ️]
-$addButton[no;volu;;secondary;no;🔊]
+  - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
+
+$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS]]
+$addButton[no;ante;Anterior;secondary;no;⏪;$var[musicMS]]
+$addButton[no;pause;Pausar;secondary;no;⏸️;$var[musicMS]]
+$addButton[no;skip;Siguiente;secondary;no;⏩;$var[musicMS]]
+$addButton[no;list;Lista;secondary;no;🗒️;$var[musicMS]]
+$addButton[yes;info;Info;secondary;no;ℹ️;$var[musicMS]]
+$addButton[no;volu;Volumen;secondary;no;🔊;$var[musicMS]]
+$addButton[no;down;Descargar;primary;no;📥;$var[musicMS]]
+$addButton[no;musicAI;AI;success;no;🧠;$var[musicMS]]
+$setServerVar[musicMS;$var[musicMS]]
 $reply
 $endif
 $elseif[$httpResult[position]>=2]
+$removeAllComponents[$getServerVar[musicMS]]
+$var[IMG;https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
+
 $nomention
-$author[$var[author]]
-$title[Musica añadida a la cola]
-$description[* **Nombre:** $var[name]
+$var[musicMS2;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtube];* **Nombre:** $var[name]
   - **Autor:** $var[author]
   - **Duración:** $var[long]
-  - **URL:** $var[youtube]]
-$thumbnail[$var[image]]
-$image[https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
-$footer[Akiomae APIS]
-$addTimestamp
+  - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
+
+$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS2]]
+$addButton[no;ante;Anterior;secondary;no;⏪;$var[musicMS2]]
+$addButton[no;pause;Pausar;secondary;no;⏸️;$var[musicMS2]]
+$addButton[no;skip;Siguiente;secondary;no;⏩;$var[musicMS2]]
+$addButton[no;list;Lista;secondary;no;🗒️;$var[musicMS2]]
+$addButton[yes;info;Info;secondary;no;ℹ️;$var[musicMS2]]
+$addButton[no;volu;Volumen;secondary;no;🔊;$var[musicMS2]]
+$addButton[no;down;Descargar;primary;no;📥;$var[musicMS2]]
+$addButton[no;musicAI;AI;success;no;🧠;$var[musicMS2]]
+$setServerVar[musicMS;$var[musicMS2]]
 $reply
 $endif
 $endif
