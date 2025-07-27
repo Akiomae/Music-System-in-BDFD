@@ -46,7 +46,7 @@ https://discord.gg/RMSYrQCs2r
 - ⏭️ Jump to Song
 └ Salta directamente a cualquier canción de la lista por su posición
 - :arrows_counterclockwise: Crossfade 
-└ Transiciones suaves entre canciones (1-10 segundos configurables)
+└ Transiciones suaves entre canciones
 - :zap: Speed Control 
 └ Cambia la velocidad de reproducción (0.25x hasta 2.0x)
 - :microphone: Karaoke Mode 
