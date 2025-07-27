@@ -16,15 +16,19 @@ $description[**Musica actual:** $var[music]]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Parar;danger;no;:stop_button:]
-$addButton[no;ante;Anterior;secondary;no;:rewind:]
-$addButton[no;resume;Reanundar;secondary;no;▶️]
-$addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
-$addButton[no;list;Lista;secondary;no;:notepad_spiral:]
+$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[no;ante;Previous;secondary;no;:rewind:]
+$addButton[no;resume;Resume;secondary;no;▶️]
+$addButton[no;skip;Skip;secondary;no;:fast_forward:]
+$addButton[no;list;List;secondary;no;:notepad_spiral:]
 $addButton[yes;info;Info;secondary;no;:information_source:]
-$addButton[no;volu;Volumen;secondary;no;:loud_sound:]
-$addButton[no;down;Descargar;primary;no;:inbox_tray:]
+$addButton[no;volu;Volume;secondary;no;:loud_sound:]
+$addButton[no;down;Download;primary;no;:inbox_tray:]
+$addButton[no;speed;Speed;secondary;no;🏃‍♂️‍➡️]
 $addButton[no;musicAI;AI;success;no;:brain:]
+$addButton[yes;cross;Crossfade;primary;no;〰️]
+$addButton[no;kara;Karaoke;primary;no;🎙️]
+$addButton[no;jump;Jump;primary;no;⏭️]
 $removeAllComponents
 $deleteMessage[$channelID;$var[ID]]
 $endif
@@ -46,15 +50,19 @@ $description[**Musica actual:** $var[music]]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Parar;danger;no;:stop_button:]
-$addButton[no;ante;Anterior;secondary;no;:rewind:]
-$addButton[no;pause;Pausar;secondary;no;:pause_button:]
-$addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
-$addButton[no;list;Lista;secondary;no;:notepad_spiral:]
+$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[no;ante;Previous;secondary;no;:rewind:]
+$addButton[no;pause;Pause;secondary;no;⏸️]
+$addButton[no;skip;Skip;secondary;no;:fast_forward:]
+$addButton[no;list;List;secondary;no;:notepad_spiral:]
 $addButton[yes;info;Info;secondary;no;:information_source:]
-$addButton[no;volu;Volumen;secondary;no;:loud_sound:]
-$addButton[no;down;Descargar;primary;no;:inbox_tray:]
+$addButton[no;volu;Volume;secondary;no;:loud_sound:]
+$addButton[no;down;Download;primary;no;:inbox_tray:]
+$addButton[no;speed;Speed;secondary;no;🏃‍♂️‍➡️]
 $addButton[no;musicAI;AI;success;no;:brain:]
+$addButton[yes;cross;Crossfade;primary;no;〰️]
+$addButton[no;kara;Karaoke;primary;no;🎙️]
+$addButton[no;jump;Jump;primary;no;⏭️]
 $removeAllComponents
 $deleteMessage[$channelID;$var[ID]]
 $endif
@@ -94,15 +102,19 @@ $description[**$httpResult[currentTrack;name]**]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Parar;danger;no;:stop_button:]
-$addButton[no;ante;Anterior;secondary;no;:rewind:]
-$addButton[no;pause;Pausar;secondary;no;:pause_button:]
-$addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
-$addButton[no;list;Lista;secondary;no;:notepad_spiral:]
+$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[no;ante;Previous;secondary;no;:rewind:]
+$addButton[no;pause;Pause;secondary;no;⏸️]
+$addButton[no;skip;Skip;secondary;no;:fast_forward:]
+$addButton[no;list;List;secondary;no;:notepad_spiral:]
 $addButton[yes;info;Info;secondary;no;:information_source:]
-$addButton[no;volu;Volumen;secondary;no;:loud_sound:]
-$addButton[no;down;Descargar;primary;no;:inbox_tray:]
+$addButton[no;volu;Volume;secondary;no;:loud_sound:]
+$addButton[no;down;Download;primary;no;:inbox_tray:]
+$addButton[no;speed;Speed;secondary;no;🏃‍♂️‍➡️]
 $addButton[no;musicAI;AI;success;no;:brain:]
+$addButton[yes;cross;Crossfade;primary;no;〰️]
+$addButton[no;kara;Karaoke;primary;no;🎙️]
+$addButton[no;jump;Jump;primary;no;⏭️]
 $removeAllComponents
 $endif
 $endif
@@ -123,15 +135,19 @@ $description[**$httpResult[currentTrack;name]**]
 $footer[Akiomae APIS]
 $addTimestamp
 $removeAllComponents
-$addButton[yes;stop;Parar;danger;no;:stop_button:]
-$addButton[no;ante;Anterior;secondary;no;:rewind:]
-$addButton[no;pause;Pausar;secondary;no;:pause_button:]
-$addButton[no;skip;Siguiente;secondary;no;:fast_forward:]
-$addButton[no;list;Lista;secondary;no;:notepad_spiral:]
+$addButton[yes;stop;Stop;danger;no;:stop_button:]
+$addButton[no;ante;Previous;secondary;no;:rewind:]
+$addButton[no;pause;Pause;secondary;no;⏸️]
+$addButton[no;skip;Skip;secondary;no;:fast_forward:]
+$addButton[no;list;List;secondary;no;:notepad_spiral:]
 $addButton[yes;info;Info;secondary;no;:information_source:]
-$addButton[no;volu;Volumen;secondary;no;:loud_sound:]
-$addButton[no;down;Descargar;primary;no;:inbox_tray:]
+$addButton[no;volu;Volume;secondary;no;:loud_sound:]
+$addButton[no;down;Download;primary;no;:inbox_tray:]
+$addButton[no;speed;Speed;secondary;no;🏃‍♂️‍➡️]
 $addButton[no;musicAI;AI;success;no;:brain:]
+$addButton[yes;cross;Crossfade;primary;no;〰️]
+$addButton[no;kara;Karaoke;primary;no;🎙️]
+$addButton[no;jump;Jump;primary;no;⏭️]
 $removeAllComponents
 $endif
 $endif
@@ -187,7 +203,6 @@ $if[$customID==volu]
 $ephemeral
 $nomention
 $removeAllComponents
-
 $title[Ajusta el volumen de la musica.]
 $footer[Akiomae APIS]
 $addTimestamp
@@ -210,23 +225,190 @@ $title[:loud_sound: Volumen ajustado :headphones:]
 $description[Se ha ajustado el volumen de la música a `$splitText[2]%`]
 $endif
 
+$if[$customID==speed]
+$ephemeral
+$nomention
+$removeAllComponents
+$title[Ajusta la velocidad de la musica.]
+$footer[Akiomae APIS]
+$addTimestamp
+$addButton[yes;sp-0.25;0.25;secondary;no;]
+$addButton[no;sp-0.50;0.50;secondary;no;]
+$addButton[no;sp-0.75;0.75;secondary;no;]
+$addButton[no;sp-1.00;Normal;secondary;no;]
+$addButton[no;sp-1.50;x1.5;secondary;no;]
+$addButton[yes;sp-2.00;x2;secondary;no;]
+$endif
+
+$textSplit[$customID;-]
+$if[$splitText[1]==sp]
+$ephemeral
+$nomention
+$removeAllComponents
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/speed;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID",
+    "speed": $splitText[2]
+}]
+$title[🏃‍♂️‍➡️ Velocidad ajustada]
+$description[Se ha ajustado la velocidad de la música a `$splitText[2]`]
+$endif
+
+$if[$customID==cross]
+$nomention
+$removeAllComponents
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/crossfade;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID",
+    "duration": 5,
+    "enabled": true
+}]
+$var[CROSS;$sendMessage[Se añadio un Crossfade a la lista de reproducción exitosamente.;yes]]
+$addButton[no;NOcross;Desactivar Crossfade;danger;no;〰️;$var[CROSS]]
+$endif
+
+$if[$customID==NOcross]
+$nomention
+$removeAllComponents
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/crossfade;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID",
+    "duration": 5,
+    "enabled": false
+}]
+$var[CROSS2;$sendMessage[Se desactivo el Crossfade a la lista de reproducción exitosamente.;yes]]
+$addButton[no;cross;Activar Crossfade;success;no;〰️;$var[CROSS2]]
+$endif
+
+$if[$customID==kara]
+$nomention
+$removeAllComponents
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/karaoke;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID",
+    "intensity": 0.7,
+    "enabled": true
+}]
+$var[KAR;$sendMessage[Se activo el modo Karaoke exitosamente.;yes]]
+$addButton[no;NOkara;Desactivar modo karaoke;danger;no;🎙️;$var[KAR]]
+$endif
+
+$if[$customID==NOkara]
+$nomention
+$removeAllComponents
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/karaoke;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID",
+    "intensity": 0.7,
+    "enabled": false
+}]
+$var[KAR2;$sendMessage[Se desactivo el modo Karaoke exitosamente.;yes]]
+$addButton[no;kara;Activar modo karaoke;danger;no;🎙️;$var[KAR2]]
+$endif
+
 $if[$customID==down]
 $nomention
 $var[ID;$sendMessage[Descargando musica...;yes]]
 $removeAllComponents
-$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/queue?bot_id=$botID&guild_id=$guildID]
-$var[name;$httpResult[currentTrack;name]]
-$var[url;$httpResult[currentTrack;url]]
-
-$httpPost[https://edgabot.lucnodes.es/api/Discord/audioSend.php;{
-  "token": "$getVar[TOKEN]",
-  "channelID": "$channelID",
-  "url": "$var[url]",
-  "name": "$var[name].mp3",
-  "messageID": "$messageID"
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/send-current-audio;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "channel_id": "$channelID",
+    "guild_id": "$guildID"
 }]
 $deleteMessage[$channelID;$var[ID]]
 $cooldown[20s;Espera al menos 20 segundos para volver a descargar la musica actual.]
+$endif
+
+$if[$customID==jump]
+$ephemeral
+$nomention
+$removeAllComponents
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/list;{
+    "bot_id": "$botID",
+    "guild_id": "$guildID"
+}]
+$if[$httpResult[songs;0;name]==]
+Aun no hay musicas en la lista.$else
+$title[Saltar entre músicas]
+$footer[Akiomae APIS]
+$addTimestamp
+$description[Salta a cualquier música de la lista.]
+
+$newSelectMenu[Musics;1;1;Selecciona una música de la lista]
+$addSelectMenuOption[Musics;$httpResult[songs;0;name];jmp-0;;;]$endif
+
+$if[$httpResult[songs;1;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;1;name];jmp-1;;;]
+$endif
+$if[$httpResult[songs;2;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;2;name];jmp-2;;;]
+$endif
+$if[$httpResult[songs;3;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;3;name];jmp-3;;;]
+$endif
+$if[$httpResult[songs;4;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;4;name];jmp-4;;;]
+$endif
+$if[$httpResult[songs;5;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;5;name];jmp-5;;;]
+$endif
+$if[$httpResult[songs;6;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;6;name];jmp-6;;;]
+$endif
+$if[$httpResult[songs;7;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;7;name];jmp-7;;;]
+$endif
+$if[$httpResult[songs;8;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;8;name];jmp-8;;;]
+$endif
+$if[$httpResult[songs;9;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;9;name];jmp-9;;;]
+$endif
+$if[$httpResult[songs;10;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;10;name];jmp-10;;;]
+$endif
+$if[$httpResult[songs;11;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;11;name];jmp-11;;;]
+$endif
+$if[$httpResult[songs;12;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;12;name];jmp-12;;;]
+$endif
+$if[$httpResult[songs;13;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;13;name];jmp-13;;;]
+$endif
+$if[$httpResult[songs;14;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;14;name];jmp-14;;;]
+$endif
+$if[$httpResult[songs;15;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;15;name];jmp-15;;;]
+$endif
+$if[$httpResult[songs;16;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;16;name];jmp-16;;;]
+$endif
+$if[$httpResult[songs;17;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;17;name];jmp-17;;;]
+$endif
+$if[$httpResult[songs;18;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;18;name];jmp-18;;;]
+$endif
+$if[$httpResult[songs;19;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;19;name];jmp-19;;;]
+$endif
+$if[$httpResult[songs;20;name]==]$else
+$addSelectMenuOption[Musics;$httpResult[songs;20;name];jmp-20;;;]
+$endif
+
 $endif
 
 $if[$customID==musicAI]
@@ -241,8 +423,18 @@ $description[Aun no hay una lista de reproducción]
 $else
 $var[JSON;{"$httpResult[songs;0;name]$if[$httpResult[songs;1;name]==]$else","$httpResult[songs;1;name]$endif$if[$httpResult[songs;2;name]==]$else","$httpResult[songs;2;name]$endif$if[$httpResult[songs;3;name]==]$else","$httpResult[songs;3;name]$endif$if[$httpResult[songs;4;name]==]$else","$httpResult[songs;4;name]$endif$if[$httpResult[songs;5;name]==]$else","$httpResult[songs;5;name]$endif$if[$httpResult[songs;6;name]==]$else","$httpResult[songs;6;name]$endif$if[$httpResult[songs;7;name]==]$else","$httpResult[songs;7;name]$endif$if[$httpResult[songs;8;name]==]$else","$httpResult[songs;8;name]$endif$if[$httpResult[songs;9;name]==]$else","$httpResult[songs;9;name]$endif$if[$httpResult[songs;10;name]==]$else","$httpResult[songs;10;name]$endif"}]
 $var[IDE;$sendMessage[La IA esta buscando una recomendación...;yes]]
-$httpGet[https://api.agatz.xyz/api/gptlogic?logic=$url[encode;Esta es una lista de reproducción en formato JSON con nombres de canciones: $var[JSON]. Basándote en las canciones, recomienda SOLO EL NOMBRE DE UNA CANCIÓN SIGUIENTE, RECUERDA SOLO NOMBRE, NADA DE TEXTO QUE NO SEA EL NOMBRE.]&p=$url[encode;¿Qué musica deberia seguir esta lista?]]
-$var[IA;$httpResult[data;result]]
+
+$httpPost[https://edgabot.lucnodes.es/api/AI/GEMINI/;{
+  "id": "$botID",
+  "username": "$username[$authorID]",
+  "context": "$url[encode;Esta es una lista de reproducción en formato JSON con nombres de canciones: $var[JSON]. Basándote en las canciones, recomienda SOLO EL NOMBRE DE UNA CANCIÓN SIGUIENTE, RECUERDA SOLO NOMBRE, NADA DE TEXTO QUE NO SEA EL NOMBRE.]",
+  "personality": "DJ, Conocedor de Musicas",
+  "name": "Akiomae APIs",
+  "prompt": "$url[encode;¿Qué música deberia seguir la lista?]"
+}
+]
+
+$var[IA;$httpResult[response]]
 $deleteMessage[$channelID;$var[IDE]]
 
 $var[ID;$sendMessage[La IA recomendo `$var[IA]`, Buscando musica...;yes]]
@@ -252,7 +444,7 @@ $var[url;$httpResult[url]]
 $deleteMessage[$channelID;$var[ID]]
 
 
-$var[II;$sendMessage[Se encontro `$var[name]`, Añadiendo a la lista...;yes]]
+$var[XXXX;$sendMessage[Se encontro `$var[name]`, Añadiendo a la lista...;yes]]
 $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/music;{
   "token": "$getVar[TOKEN]",
   "bot_id": "$botID",
@@ -261,18 +453,9 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/music;{
   "url": "$var[url]",
   "name": "$var[name]"
 }]
-$var[error;$httpResult[error]]
-$var[msg;$httpResult[message]]
-$deleteMessage[$channelID;$var[II]]
+$deleteMessage[$channelID;$var[XXXX]]
 
-$if[$var[error]==Límite de canciones alcanzado]
-$description[❌ **$var[error]**
--# $var[msg]]
-$reply
-$else
-$description[Se añadio `$var[name]` a la lista de reproducción actual]
-$footer[Powered by Akiomae APIS]
-$reply
+$sendMessage[Se añadio `$var[name]` a la lista de reproducción actual]
 $endif
 $endif
 $endif
