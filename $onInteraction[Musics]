@@ -1,0 +1,17 @@
+$nomention
+$textSplit[$message;-]
+$if[$splitText[1]==jmp]
+$removeAllComponents
+$nomention
+$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/jump;{
+    "token": "$getVar[TOKEN]",
+    "bot_id": "$botID",
+    "user_id": "$authorID",
+    "guild_id": "$guildID",
+    "song_index": $splitText[2]
+}]
+$ephemeral
+
+$description[Musica saltada a **$httpResult[currentTrack;name]**]
+$addButton[no;down;Download;primary;no;📥;]
+$endif
