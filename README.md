@@ -43,7 +43,7 @@ https://discord.gg/RMSYrQCs2r
 ## Cosas añadidas en la nueva versión v6.0
 - :outbox_tray: Send Current Audio 
 └ Envía el archivo de la canción actual a cualquier canal de texto
-- :track_next: Jump to Song
+- ⏭️ Jump to Song
 └ Salta directamente a cualquier canción de la lista por su posición
 - :arrows_counterclockwise: Crossfade 
 └ Transiciones suaves entre canciones (1-10 segundos configurables)
