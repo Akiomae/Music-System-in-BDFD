@@ -6,7 +6,7 @@ $var[MS;$message]
 $endif
 
 $onlyIf[$var[MS]!=;Escribe el nombre de una musica.]
-$var[ID;$sendMessage[Buscando **$var[MS]**...;yes]]
+$var[ID;$sendMessage[<a:Loading:1369887884517048421> Buscando **$var[MS]**.;yes]]
 $suppressErrors[Error innesperado, intentalo mas tarde.
 -# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
 
@@ -47,7 +47,7 @@ $httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/stop;{
     "guild_id": "$guildID"
 }]
 $else
-$var[IMG;https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
+$var[IMG;https://edgabot.lucnodes.es/api/image/music/v2/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
 
 $nomention
 $var[musicMS;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtube];* **Nombre:** $var[name]
@@ -55,21 +55,26 @@ $var[musicMS;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtub
   - **Duración:** $var[long]
   - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
 
-$addButton[yes;stop;Parar;danger;no;⏹️;$var[musicMS]]
-$addButton[no;ante;Anterior;secondary;no;⏪;$var[musicMS]]
-$addButton[no;pause;Pausar;secondary;no;⏸️;$var[musicMS]]
-$addButton[no;skip;Siguiente;secondary;no;⏩;$var[musicMS]]
-$addButton[no;list;Lista;secondary;no;🗒️;$var[musicMS]]
+$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS]]
+$addButton[no;ante;Previous;secondary;no;⏪;$var[musicMS]]
+$addButton[no;pause;Pause;secondary;no;⏸️;$var[musicMS]]
+$addButton[no;skip;Skip;secondary;no;⏩;$var[musicMS]]
+$addButton[no;list;List;secondary;no;🗒️;$var[musicMS]]
 $addButton[yes;info;Info;secondary;no;ℹ️;$var[musicMS]]
-$addButton[no;volu;Volumen;secondary;no;🔊;$var[musicMS]]
-$addButton[no;down;Descargar;primary;no;📥;$var[musicMS]]
+$addButton[no;volu;Volume;secondary;no;🔊;$var[musicMS]]
+$addButton[no;speed;Speed;secondary;no;🏃‍♂️‍➡️;$var[musicMS]]
+$addButton[no;down;Download;primary;no;📥;$var[musicMS]]
 $addButton[no;musicAI;AI;success;no;🧠;$var[musicMS]]
+$addButton[yes;cross;Crossfade;primary;no;〰️;$var[musicMS]]
+$addButton[no;kara;Karaoke;primary;no;🎙️;$var[musicMS]]
+$addButton[no;jump;Jump;primary;no;⏭️;$var[musicMS]]
+
 $setServerVar[musicMS;$var[musicMS]]
 $reply
 $endif
 $elseif[$httpResult[position]>=2]
 $removeAllComponents[$getServerVar[musicMS]]
-$var[IMG;https://edgabot.lucnodes.es/api/image/music/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
+$var[IMG;https://edgabot.lucnodes.es/api/image/music/v2/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
 
 $nomention
 $var[musicMS2;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtube];* **Nombre:** $var[name]
@@ -77,15 +82,20 @@ $var[musicMS2;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtu
   - **Duración:** $var[long]
   - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
 
-$addButton[yes;stop;Parar;danger;no;⏹️;$var[musicMS2]]
-$addButton[no;ante;Anterior;secondary;no;⏪;$var[musicMS2]]
-$addButton[no;pause;Pausar;secondary;no;⏸️;$var[musicMS2]]
-$addButton[no;skip;Siguiente;secondary;no;⏩;$var[musicMS2]]
-$addButton[no;list;Lista;secondary;no;🗒️;$var[musicMS2]]
+$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS2]]
+$addButton[no;ante;Previous;secondary;no;⏪;$var[musicMS2]]
+$addButton[no;pause;Pause;secondary;no;⏸️;$var[musicMS2]]
+$addButton[no;skip;Skip;secondary;no;⏩;$var[musicMS2]]
+$addButton[no;list;List;secondary;no;🗒️;$var[musicMS2]]
 $addButton[yes;info;Info;secondary;no;ℹ️;$var[musicMS2]]
-$addButton[no;volu;Volumen;secondary;no;🔊;$var[musicMS2]]
-$addButton[no;down;Descargar;primary;no;📥;$var[musicMS2]]
+$addButton[no;volu;Volume;secondary;no;🔊;$var[musicMS2]]
+$addButton[no;speed;Speed;secondary;no;🏃‍♂️‍➡️;$var[musicMS2]]
+$addButton[no;down;Download;primary;no;📥;$var[musicMS2]]
 $addButton[no;musicAI;AI;success;no;🧠;$var[musicMS2]]
+$addButton[yes;cross;Crossfade;primary;no;〰️;$var[musicMS2]]
+$addButton[no;kara;Karaoke;primary;no;🎙️;$var[musicMS2]]
+$addButton[no;jump;Jump;primary;no;⏭️;$var[musicMS2]]
+
 $setServerVar[musicMS;$var[musicMS2]]
 $reply
 $endif
