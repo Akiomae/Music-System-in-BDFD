@@ -1,5 +1,5 @@
 
-# Music System in BDFD v6.0 (New Version)
+# Music System in BDFD v6.1 BETA (New Version)
 
 Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot Desinger For Discord.
 
