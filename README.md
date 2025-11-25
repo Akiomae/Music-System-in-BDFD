@@ -1,24 +1,21 @@
 
-# Music System in BDFD v6.1 BETA (New Version)
+# Music System in BDFD v7.0 post-BETA (Privado)
 
 Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot Desinger For Discord.
-
+**ESTE SISTEMA HA SIDO REHECHO DE UNA NUEVA FORMA PARA AHORRAR MAS RECURSOS, SEA MAS COMODO DE USAR Y COMPATIBLE CON LAS NUEVAS LIMITACIONES DE BDFD**
 
 ## Configuración
 
-#### Solo necesitas crear 2 variables obligatoriamente
+#### Solo necesitas crear 1 variable obligatoriamente
 
 
 | nombre | valor     |
 | :-------- | :------- |
 | `TOKEN` | `El token de su bot de discord` | 
-| `musicMS` | `Sin valor` | 
 
 ## Comandos
+- ! (Este codigo tiene 6 comandos en uno asi que coloca solo tu prefix por ejemplo: !)
 - !play
-- !stop
-- !vol
-- $onInteraction (2)
 - $onInteraction[Musics]
 
 
@@ -29,36 +26,21 @@ Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot De
 
 ## Soporte
 
-https://discord.gg/RMSYrQCs2r
+https://discord.gg/dru9uRYKqq
 
-## Cosas añadidas en la versión anterior
-- Ahora los botones se posicionaran siempre en la musica mas reciente añadida
-- Se redujo lo mayor posible los errores que impedian añadir musicas
-- Se soluciono errores de bots NO PREMIUM
-- Se agrego sistema de IA (Este sistema dara recomendaciones y lo añadira automaticamente a la lista)
-- Se cambio de libreria de busqueda para una mejor legibilidad y evitar la mayoria de errores posibles
-- Coloreo de botones y nombres de acción añadido
-- Se añadio sistema de descarga para descargar la musica actualmente sonando de la lista (Solo por 1 minutos, luego de eso no se podra descargar)
-
-## Cosas añadidas en la nueva versión v6.0
-- :outbox_tray: Send Current Audio 
-└ Envía el archivo de la canción actual a cualquier canal de texto
-- ⏭️ Jump to Song
-└ Salta directamente a cualquier canción de la lista por su posición
-- :arrows_counterclockwise: Crossfade 
-└ Transiciones suaves entre canciones
-- :zap: Speed Control 
-└ Cambia la velocidad de reproducción (0.25x hasta 2.0x)
-- :microphone: Karaoke Mode 
-└ Reduce las voces para cantar tus canciones favoritas
+## ¿Qué contiene?
+> Por ahora solo.
+- Reproducción de musica
+- Sistema de pause y resume
+- Sistema de skip y back
+- Sistema de jump para saltar a cualquier musica de la cola "maximo 25"
+- Función de stop para detener la musica y desconectar al bot
 
 ## Posibles bugs
 El sistema es totalmente funcional, aunque tiene algunos bugs que luego se iran corrigiendo.
 Algunos bugs pueden ser:
-- No agregar musicas a la lista (rara vez, esto mas depende de los permisos de los videos)
+- Tardar cierto tiempo en procesar la musica, esto es mas por el peso y la duración del video/musica que se busca
+- Al finalizar la cola de musicas puede no repetirse en loop, esto se ira corrigiendo con las demas actualizaciones
 
-## BotPanel
-> Se ah desarrollado un panel para su bot que use este sistema de musica.
-`Link:` https://edgabot.lucnodes.es/
-### Video de demostración
-https://vimeo.com/1077124656
+## Bot Panel
+`EN DESARROLLO`
