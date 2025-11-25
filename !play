@@ -4,103 +4,18 @@ $var[MS;$message[canción]]
 $else
 $var[MS;$message]
 $endif
-
+$suppressErrors[]
 $onlyIf[$var[MS]!=;Escribe el nombre de una musica.]
-$var[ID;$sendMessage[<a:Loading:1369887884517048421> Buscando **$var[MS]**.;yes]]
-$suppressErrors[Error innesperado, intentalo mas tarde.
--# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
+$var[ID;$sendMessage[Buscando **$var[MS]**.;yes]]
 
-$httpGet[http://vps-d58308d1.es.cloud.lucnodes.es:4403/get_song?name=$url[encode;$var[MS]]]
-$var[name;$httpResult[title]]
-$var[url;$httpResult[url]]
-$var[author;$httpResult[channel]]
-$var[long;$httpResult[duration]]
-$var[image;$httpResult[thumbnail]]
-$var[youtube;$httpResult[original_url]]
-
-$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/music;{
+$httpPost[https://akiomae.xyz/api/music/get/;{
   "token": "$getVar[TOKEN]",
   "bot_id": "$botID",
   "user_id": "$authorID",
   "guild_id": "$guildID",
-  "url": "$var[url]",
-  "name": "$var[name]"
+  "channel_id": "$channelID",
+  "name": "$var[MS]",
+  "deleteMessageID": "$var[ID]"
 }]
-$if[$httpResult[error]==Límite de canciones alcanzado]
-$description[❌ **$httpResult[error]**
--# $httpResult[message]]
-$else
-$if[$httpResult[position]==1]
-$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/play;{
-    "token": "$getVar[TOKEN]",
-    "bot_id": "$botID",
-    "user_id": "$authorID",
-    "guild_id": "$guildID"
-}]
-$var[conect;$httpResult[error]]
-$if[$var[conect]==El usuario no está en un canal de voz]
-$description[❌ **$httpResult[error]**]
-$httpPost[http://vps-d58308d1.es.cloud.lucnodes.es:4402/API/stop;{
-    "token": "$getVar[TOKEN]",
-    "bot_id": "$botID",
-    "user_id": "$authorID",
-    "guild_id": "$guildID"
-}]
-$else
-$var[IMG;https://edgabot.lucnodes.es/api/image/music/v2/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
 
-$nomention
-$var[musicMS;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtube];* **Nombre:** $var[name]
-  - **Autor:** $var[author]
-  - **Duración:** $var[long]
-  - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
-
-$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS]]
-$addButton[no;ante;Previous;secondary;no;⏪;$var[musicMS]]
-$addButton[no;pause;Pause;secondary;no;⏸️;$var[musicMS]]
-$addButton[no;skip;Skip;secondary;no;⏩;$var[musicMS]]
-$addButton[no;list;List;secondary;no;🗒️;$var[musicMS]]
-$addButton[yes;info;Info;secondary;no;ℹ️;$var[musicMS]]
-$addButton[no;volu;Volume;secondary;no;🔊;$var[musicMS]]
-$addButton[no;speed;Speed;secondary;no;🏃‍♂️;$var[musicMS]]
-$addButton[no;down;Download;primary;no;📥;$var[musicMS]]
-$addButton[no;musicAI;AI;success;no;🧠;$var[musicMS]]
-$addButton[yes;cross;Crossfade;primary;no;〰️;$var[musicMS]]
-$addButton[no;kara;Karaoke;primary;no;🎙️;$var[musicMS]]
-$addButton[no;jump;Jump;primary;no;⏭️;$var[musicMS]]
-
-$setServerVar[musicMS;$var[musicMS]]
-$reply
-$endif
-$elseif[$httpResult[position]>=2]
-$removeAllComponents[$getServerVar[musicMS]]
-$var[IMG;https://edgabot.lucnodes.es/api/image/music/v2/?name=$url[encode;$var[name]]&autor=$url[encode;$var[author]]&image=$var[image]&time=$var[long]]
-
-$nomention
-$var[musicMS2;$sendEmbedMessage[$channelID;;Musica añadida a la cola;$var[youtube];* **Nombre:** $var[name]
-  - **Autor:** $var[author]
-  - **Duración:** $var[long]
-  - **URL:** $var[youtube];#FFFF00;$var[author];;Akiomae APIS;https://edgabot.lucnodes.es/crement.png;$var[image];$var[IMG];yes;yes]]
-
-$addButton[yes;stop;Stop;danger;no;⏹️;$var[musicMS2]]
-$addButton[no;ante;Previous;secondary;no;⏪;$var[musicMS2]]
-$addButton[no;pause;Pause;secondary;no;⏸️;$var[musicMS2]]
-$addButton[no;skip;Skip;secondary;no;⏩;$var[musicMS2]]
-$addButton[no;list;List;secondary;no;🗒️;$var[musicMS2]]
-$addButton[yes;info;Info;secondary;no;ℹ️;$var[musicMS2]]
-$addButton[no;volu;Volume;secondary;no;🔊;$var[musicMS2]]
-$addButton[no;speed;Speed;secondary;no;🏃‍♂️;$var[musicMS2]]
-$addButton[no;down;Download;primary;no;📥;$var[musicMS2]]
-$addButton[no;musicAI;AI;success;no;🧠;$var[musicMS2]]
-$addButton[yes;cross;Crossfade;primary;no;〰️;$var[musicMS2]]
-$addButton[no;kara;Karaoke;primary;no;🎙️;$var[musicMS2]]
-$addButton[no;jump;Jump;primary;no;⏭️;$var[musicMS2]]
-
-$setServerVar[musicMS;$var[musicMS2]]
-$reply
-$endif
-$endif
-
-$deleteMessage[$channelID;$var[ID]]
-$suppressErrors[Error innesperado, intentalo mas tarde.
--# Recuerda buscar correctamente ya que la api de YouTube no es como el buscador de YouTube.]
+$suppressErrors[]
