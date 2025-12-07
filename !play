@@ -15,7 +15,8 @@ $httpPost[https://akiomae.xyz/api/music/get/;{
   "guild_id": "$guildID",
   "channel_id": "$channelID",
   "name": "$var[MS]",
-  "deleteMessageID": "$var[ID]"
+  "deleteMessageID": "$var[ID]",
+  "lang": "es"
 }]
 
 $suppressErrors[]
