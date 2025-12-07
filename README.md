@@ -1,5 +1,5 @@
 
-# Music System in BDFD v7.0 post-BETA (Privado)
+# Music System in BDFD v7.0 post-BETA (Privado) ESPAÑOL
 
 Un sistema avanzado para poder reproducir musica con tu bot de discord en Bot Desinger For Discord.
 **ESTE SISTEMA HA SIDO REHECHO DE UNA NUEVA FORMA PARA AHORRAR MAS RECURSOS, SEA MAS COMODO DE USAR Y COMPATIBLE CON LAS NUEVAS LIMITACIONES DE BDFD**
