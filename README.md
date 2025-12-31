@@ -48,6 +48,5 @@ Algunos bugs pueden ser:
 ## Galeria de embeds
 https://akiomae.xyz/AK-Music/
 
-## Video de demostración[
-https://youtu.be/Ro4By8jDgNw?si=Todu9bOG3cdudQxA
-
+## Video de demostración
+[![Music system for BDFD v8.0 - Akiomae APIs](https://img.youtube.com/vi/Ro4By8jDgNw/0.jpg)](https://www.youtube.com/watch?v=Ro4By8jDgNw)
