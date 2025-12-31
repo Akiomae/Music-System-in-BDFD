@@ -48,6 +48,6 @@ Algunos bugs pueden ser:
 ## Galeria de embeds
 https://akiomae.xyz/AK-Music/
 
-## Video de demostración
-https://www.youtube.com/embed/Ro4By8jDgNw?si=RUmX1XX6fJRb-CoZ&amp;controls=0
+## Video de demostración[
+https://youtu.be/Ro4By8jDgNw?si=Todu9bOG3cdudQxA
 
