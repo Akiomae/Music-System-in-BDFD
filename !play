@@ -7,8 +7,11 @@ $endif
 $suppressErrors[]
 $onlyIf[$var[MS]!=;Escribe el nombre de una musica.]
 $var[ID;$sendMessage[Buscando **$var[MS]**.;yes]]
+$var[language;es] $c[👈 solo hay 4 idiomas disponibles: es - Español, en - English, ja - Japanese, pt - Portuguese]
 
-$httpPost[https://akiomae.xyz/api/music/get/;{
+$var[CODIGO_EMBED;5a2ccb544a38] $c[👈 Aqui puedes reemplazar el codigo por tu propio codigo de embed o el que te guste de https://akiomae.xyz/AK-Music/]
+
+$httpPost[https://akiomae.xyz/AK-Music/api/playing.php;{
   "token": "$getVar[TOKEN]",
   "bot_id": "$botID",
   "user_id": "$authorID",
@@ -16,7 +19,9 @@ $httpPost[https://akiomae.xyz/api/music/get/;{
   "channel_id": "$channelID",
   "name": "$var[MS]",
   "deleteMessageID": "$var[ID]",
-  "lang": "es"
+  "lang": "$var[language]",
+  "code_embed": "$var[CODIGO_EMBED]",
+  "server_name": "$url[encode;$serverName[$guildID]]"
 }]
 
 $suppressErrors[]
